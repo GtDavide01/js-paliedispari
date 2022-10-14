@@ -2,6 +2,11 @@
 Creare una funzione per capire se la parola inserita è palindroma. */
 
 
+//recupero elementi html
+const wordUserHtml = document.getElementById("word-user");
+const wordUserReverseHtml = document.getElementById("word-user-reverse");
+const wordPalindormaHtml = document.getElementById("word-palindroma");
+
 //chiedo all'utente una parola
 const userWord = prompt("inserisci una parola..");
 console.log(userWord);
@@ -12,6 +17,14 @@ console.log(wordReverse);
 const wordPalindroma = isPalindroma(userWord , wordReverse);
 console.log(wordPalindroma);
 
+//collego tramite innerHTML i risultati ottenuti
+
+wordUserHtml.innerHTML += userWord;
+wordUserReverseHtml.innerHTML += wordReverse;
+wordPalindormaHtml.innerHTML += wordPalindroma;
+
+
+//FUNZIONI
 //funzione che scrive in senso contrario la parola inserita dall'utente ; 
 function reverseWord (word){
     //trasformo la parola dell'utente in un array 
@@ -25,9 +38,11 @@ function reverseWord (word){
 }
 //funzione che verifica se la parola è palindroma
 function isPalindroma (wordA , wordB){
+    let message = "";
     if(wordA===wordB){
-        alert("la parola è palindroma");
+        message = "è palindroma.";
     }else{
-        alert("la parola non è palindroma ");
+        message ="non è palindroma.";
     }
+    return message ;
 }
