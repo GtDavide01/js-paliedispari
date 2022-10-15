@@ -15,8 +15,10 @@ const resultWinHtml = document.getElementById("result");
 
 
 //prendo la scelta dell'utente (pari o dispari)
-const userChoice = prompt("Vuoi giocare come pari o come dispari ? ");
-console.log(userChoice);
+let userChoice = "";
+while (userChoice !== "dispari" && userChoice !== "pari"){
+    userChoice = prompt("Vuoi giocare come pari o dispari?")
+}
 //prendo il numero inserito dall'utente 
 const userNumber = parseInt(prompt("Inserisci un numero da 1 a 5"));
 console.log(userNumber);
